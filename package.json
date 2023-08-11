@@ -1,0 +1,22 @@
+{
+  "name": "cypress-testing",
+  "version": "1.0.0",
+  "description": "cypress testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwall01/cypress-testing.git"
+  },
+  "author": "mwall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwall01/cypress-testing/issues"
+  },
+  "homepage": "https://github.com/mwall01/cypress-testing#readme",
+  "devDependencies": {
+    "cypress": "^12.17.3"
+  }
+}
