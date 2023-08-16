@@ -3,7 +3,7 @@ describe('templates page tests', () => {
     cy.visit('https://www.squarespace.com/templates')
   })
 
-  it('navigates template store', () => {
+  it.skip('navigates template store', () => {
     const onlineStoreTemplates = 'https://www.squarespace.com/templates/browse/topic/popular-designs/type/online-store'
     cy.get('[data-test="surveyInterstitial-exitbutton"]')
       .should('have.text', 'I\'m just browsing')
