@@ -1,3 +1,5 @@
+import { selectors } from "../support/utils/selectors";
+
 describe('domains tests', () => {
   beforeEach(() => {
     cy.visit('https://squarespace.com/domain-name-search')
@@ -20,26 +22,21 @@ describe('domains tests', () => {
   it.skip('can search for domain', () => {
     const domainName = 'bigdeliciousdomainnamefortesting101'
     
-    cy.get('[placeholder="Start your search here"]')
+    cy.get(selectors.domainSearch)
       .clear().should('have.value', '')
-      .type(domainName).should('have.value', domainName)
+      .type(domainName).should('have.value', domainName);
 
-    // cy.get('.featured-wrapper > :nth-child(1)')
-    cy.get('.domain-name-search__category-list--featured > :nth-child(1) > .domain-name-search__list-item-wrapper-button')
-      // .should('have.class', 'domains-item')
-      // check domain is not selected
-      // .should('have.class', 'available')
+    cy.get(selectors.domainResult)
       .should('be.visible')
       .and('not.have.class', 'selected')
-      // check domain is selected after click
-      .first().click({ force: true })// .should('have.class', 'selected')
+      .first().click({ force: true });
 
-    cy.get('.total')
+    cy.get(total)
       .should('be.visible')
-      .and('have.text', '1 domain - £16')
+      .and('have.text', '1 domain - £16');
 
-    cy.get('.checkout')
+    cy.get(selectors.checkoutButton)
       .should('have.text', 'continue to checkout')
-      .and('be.visible')
+      .and('be.visible');
   })
 })

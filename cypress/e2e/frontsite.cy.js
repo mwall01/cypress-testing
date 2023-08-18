@@ -1,10 +1,12 @@
+import { selectors } from "../support/utils/selectors"
+
 describe('frontsite tests', () => {
   beforeEach(() => {
     cy.visit('https://www.squarespace.com/')
   })
   
   it('displays Squarespace logo', () => {
-    cy.get('.hero__text > h1')
+    cy.get(selectors.logo)
       .should('have.text', 'Everything to sell anything')
   })
 
@@ -16,9 +18,8 @@ describe('frontsite tests', () => {
 
     cy.get('span').contains('Skip').click();
     cy.get('span').contains('Skip').click();
-    // add selectors file
     
-    cy.get('button[aria-label="Products dropdown menu"]')
+    cy.get(selectors.productsDropdown)
       .should('exist')
       // .and('contains', 'Products')
     
@@ -26,7 +27,7 @@ describe('frontsite tests', () => {
     .should('exist')
     // .should('contains', 'Templates')
 
-    cy.get('[aria-label="Resources dropdown menu"]')
+    cy.get(selectors.resourcesDropdown)
       .should('exist')
       // .should('contains', 'Resources')
   })
